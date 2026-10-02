@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "creation": "2026-09-18 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "height_imperial",
+  "width_imperial",
+  "height_metric",
+  "width_metric"
+ ],
+ "fields": [
+  {
+   "fieldname": "height_imperial",
+   "fieldtype": "Data",
+   "label": "Centre from Bottom (in)",
+   "in_list_view": 1,
+   "columns": 3,
+   "description": "Accepts fractions, e.g. 20 3/16"
+  },
+  {
+   "fieldname": "width_imperial",
+   "fieldtype": "Data",
+   "label": "Width (in)",
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "height_metric",
+   "fieldtype": "Float",
+   "label": "Centre from Bottom (mm)",
+   "precision": "1",
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "width_metric",
+   "fieldtype": "Float",
+   "label": "Width (mm)",
+   "precision": "1",
+   "in_list_view": 1,
+   "columns": 2
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-18 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "POC",
+ "name": "Door Rail Divider",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "istable": 1,
+ "editable_grid": 1
+}

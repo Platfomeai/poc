@@ -8,7 +8,7 @@ app_license = "mit"
 # Apps
 # ------------------
 
-# required_apps = []
+required_apps = ["erpnext"]
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -27,6 +27,9 @@ app_license = "mit"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/poc/css/poc.css"
 # app_include_js = "/assets/poc/js/poc.js"
+
+# include js in doctype views
+doctype_js = {"Door Configuration": "public/js/door_configuration.js"}
 
 # include js, css files in header of web template
 # web_include_css = "/assets/poc/css/poc.css"
@@ -86,7 +89,7 @@ app_license = "mit"
 # ------------
 
 # before_install = "poc.install.before_install"
-# after_install = "poc.install.after_install"
+after_install = "poc.setup.install.after_install"
 
 # Uninstallation
 # ------------

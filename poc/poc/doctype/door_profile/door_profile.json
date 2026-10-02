@@ -1,0 +1,146 @@
+{
+ "actions": [],
+ "creation": "2026-09-18 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "profile_name",
+  "profile_type",
+  "product",
+  "shape",
+  "cb_1",
+  "sb_cols",
+  "collapse",
+  "reveal",
+  "width",
+  "cb_2",
+  "plateau",
+  "frame_width",
+  "reduced_reveal",
+  "disabled",
+  "preview"
+ ],
+ "fields": [
+  {
+   "fieldname": "profile_name",
+   "fieldtype": "Data",
+   "label": "Profile Name",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "profile_type",
+   "fieldtype": "Select",
+   "label": "Profile Type",
+   "options": "Inside\nOutside",
+   "default": "Inside",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "product",
+   "fieldtype": "Select",
+   "label": "Product",
+   "options": "SQUARE\nMITRE",
+   "in_list_view": 1,
+   "description": "Maps to the ruleset's .Value.Product joined column."
+  },
+  {
+   "fieldname": "shape",
+   "fieldtype": "Select",
+   "label": "Section Shape",
+   "options": "square\n22degree\nbead\nbevel\ncambridge\ncascade\nchamfer\ncove\ncrown\ncurve\ndouble_shoulder\nellipse\nhalf_shoulder\nogee\nparklane\nregency\nroundover\nshaker",
+   "default": "square",
+   "description": "Drives the drawn cross-section in the profile picker."
+  },
+  {
+   "fieldname": "cb_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "sb_cols",
+   "fieldtype": "Section Break",
+   "label": "Joined Columns",
+   "description": "These reproduce the ruleset's .Value.&lt;Column&gt; lookups (LeftInsideProfile.Value.Collapse and friends)."
+  },
+  {
+   "fieldname": "collapse",
+   "fieldtype": "Float",
+   "label": "Collapse",
+   "precision": "4"
+  },
+  {
+   "fieldname": "reveal",
+   "fieldtype": "Float",
+   "label": "Reveal",
+   "precision": "4"
+  },
+  {
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Width",
+   "precision": "4"
+  },
+  {
+   "fieldname": "cb_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "plateau",
+   "fieldtype": "Float",
+   "label": "Plateau",
+   "precision": "4"
+  },
+  {
+   "fieldname": "frame_width",
+   "fieldtype": "Float",
+   "label": "Frame Width",
+   "precision": "4"
+  },
+  {
+   "fieldname": "reduced_reveal",
+   "fieldtype": "Float",
+   "label": "Reduced Reveal",
+   "precision": "4"
+  },
+  {
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "preview",
+   "fieldtype": "HTML",
+   "label": "Cross Section"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-18 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "POC",
+ "name": "Door Profile",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "field:profile_name",
+ "quick_entry": 1
+}

@@ -1,0 +1,624 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:configuration_name",
+ "creation": "2026-09-18 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "configuration_name",
+  "line_number",
+  "quantity",
+  "cb_id",
+  "configured_part_number",
+  "quotation",
+  "is_preset",
+  "sb_product",
+  "catalogue",
+  "product_picker",
+  "product",
+  "sb_material",
+  "units",
+  "frame_species",
+  "door_type",
+  "cb_material",
+  "thickness_uom",
+  "thickness",
+  "thickness_metric",
+  "panel_species",
+  "sb_profiles",
+  "all_sides_equal_inside",
+  "inside_profile",
+  "right_inside_profile",
+  "top_inside_profile",
+  "bottom_inside_profile",
+  "applied_moulding",
+  "cb_profiles",
+  "all_sides_equal_outside",
+  "outside_profile",
+  "right_outside_profile",
+  "top_outside_profile",
+  "bottom_outside_profile",
+  "corner_pegs",
+  "panel_type",
+  "sb_dimensions",
+  "width_imperial",
+  "height_imperial",
+  "width_metric",
+  "height_metric",
+  "cb_dim",
+  "inside_width_display",
+  "inside_height_display",
+  "sb_frame",
+  "inverted_joints",
+  "custom_frame_widths",
+  "frame_width_imperial",
+  "frame_width_metric",
+  "sb_frame_sides",
+  "frame_width_left_imperial",
+  "frame_width_right_imperial",
+  "frame_width_top_imperial",
+  "frame_width_bottom_imperial",
+  "cb_frame",
+  "frame_width_left_metric",
+  "frame_width_right_metric",
+  "frame_width_top_metric",
+  "frame_width_bottom_metric",
+  "sb_dividers",
+  "rail_dividers",
+  "cb_div",
+  "stile_dividers",
+  "sb_rail_table",
+  "rails",
+  "stiles",
+  "sb_hinges",
+  "hinge_qty",
+  "hinge_side",
+  "cb_hinge",
+  "hinge_distance_from_edge",
+  "sb_preview",
+  "preview",
+  "cb_preview",
+  "messages",
+  "horizontal_panels",
+  "vertical_panels",
+  "total_panels",
+  "sb_details",
+  "details"
+ ],
+ "fields": [
+  {
+   "fieldname": "configuration_name",
+   "fieldtype": "Data",
+   "label": "Configuration Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "line_number",
+   "fieldtype": "Int",
+   "label": "Line Number",
+   "default": "1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Quantity",
+   "default": "1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_id",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "configured_part_number",
+   "fieldtype": "Data",
+   "label": "Configured Part Number",
+   "read_only": 1,
+   "bold": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "quotation",
+   "fieldtype": "Link",
+   "label": "Quotation",
+   "options": "Quotation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_preset",
+   "fieldtype": "Check",
+   "label": "Save as Catalogue Item",
+   "description": "Catalogue items appear in the Catalogue picker above."
+  },
+  {
+   "fieldname": "sb_product",
+   "fieldtype": "Section Break",
+   "label": "Product Selection"
+  },
+  {
+   "fieldname": "catalogue",
+   "fieldtype": "Data",
+   "label": "Select a Catalogue Item or \"CONFIGURE\"",
+   "default": "CONFIGURE",
+   "reqd": 1,
+   "description": "Pick a saved catalogue item to preload every option, or CONFIGURE to start clean."
+  },
+  {
+   "fieldname": "product_picker",
+   "fieldtype": "HTML",
+   "label": "Product"
+  },
+  {
+   "fieldname": "product",
+   "fieldtype": "Select",
+   "label": "Product",
+   "options": "SQUARE\nMITRE\nMDF\nSLAB",
+   "default": "SQUARE",
+   "reqd": 1,
+   "in_list_view": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "sb_material",
+   "fieldtype": "Section Break",
+   "label": ""
+  },
+  {
+   "fieldname": "units",
+   "fieldtype": "Select",
+   "label": "Measurement Units",
+   "options": "Imperial\nMetric",
+   "default": "Imperial",
+   "reqd": 1
+  },
+  {
+   "fieldname": "frame_species",
+   "fieldtype": "Link",
+   "label": "Frame Species",
+   "options": "Door Species",
+   "reqd": 1
+  },
+  {
+   "fieldname": "door_type",
+   "fieldtype": "Select",
+   "label": "Door Type",
+   "options": "Door\nDrawer Front",
+   "default": "Door",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_material",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "thickness_uom",
+   "fieldtype": "Select",
+   "label": "Thickness U/M",
+   "options": "Imperial\nMetric",
+   "default": "Imperial",
+   "reqd": 1
+  },
+  {
+   "fieldname": "thickness",
+   "fieldtype": "Select",
+   "label": "Thickness",
+   "options": "3/4\"\n13/16\"",
+   "default": "13/16\"",
+   "reqd": 1,
+   "depends_on": "eval:doc.thickness_uom==\"Imperial\""
+  },
+  {
+   "fieldname": "thickness_metric",
+   "fieldtype": "Select",
+   "label": "Thickness (mm)",
+   "options": "19\n20.6",
+   "default": "20.6",
+   "depends_on": "eval:doc.thickness_uom==\"Metric\""
+  },
+  {
+   "fieldname": "panel_species",
+   "fieldtype": "Link",
+   "label": "Panel Species",
+   "options": "Door Species"
+  },
+  {
+   "fieldname": "sb_profiles",
+   "fieldtype": "Section Break",
+   "label": "Profiles"
+  },
+  {
+   "fieldname": "all_sides_equal_inside",
+   "fieldtype": "Check",
+   "label": "Same Inside Profile on all sides",
+   "default": "1"
+  },
+  {
+   "fieldname": "inside_profile",
+   "fieldtype": "Link",
+   "label": "Inside Frame Profile",
+   "options": "Door Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "right_inside_profile",
+   "fieldtype": "Link",
+   "label": "Right Inside Profile",
+   "options": "Door Profile",
+   "depends_on": "eval:!doc.all_sides_equal_inside"
+  },
+  {
+   "fieldname": "top_inside_profile",
+   "fieldtype": "Link",
+   "label": "Top Inside Profile",
+   "options": "Door Profile",
+   "depends_on": "eval:!doc.all_sides_equal_inside"
+  },
+  {
+   "fieldname": "bottom_inside_profile",
+   "fieldtype": "Link",
+   "label": "Bottom Inside Profile",
+   "options": "Door Profile",
+   "depends_on": "eval:!doc.all_sides_equal_inside"
+  },
+  {
+   "fieldname": "applied_moulding",
+   "fieldtype": "Select",
+   "label": "Applied Moulding",
+   "options": "(None)\nBead\nCove\nQuarter Round\nOgee",
+   "default": "(None)"
+  },
+  {
+   "fieldname": "cb_profiles",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "all_sides_equal_outside",
+   "fieldtype": "Check",
+   "label": "Same Outside Profile on all sides",
+   "default": "1"
+  },
+  {
+   "fieldname": "outside_profile",
+   "fieldtype": "Link",
+   "label": "Outside Profile",
+   "options": "Door Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "right_outside_profile",
+   "fieldtype": "Link",
+   "label": "Right Outside Profile",
+   "options": "Door Profile",
+   "depends_on": "eval:!doc.all_sides_equal_outside"
+  },
+  {
+   "fieldname": "top_outside_profile",
+   "fieldtype": "Link",
+   "label": "Top Outside Profile",
+   "options": "Door Profile",
+   "depends_on": "eval:!doc.all_sides_equal_outside"
+  },
+  {
+   "fieldname": "bottom_outside_profile",
+   "fieldtype": "Link",
+   "label": "Bottom Outside Profile",
+   "options": "Door Profile",
+   "depends_on": "eval:!doc.all_sides_equal_outside"
+  },
+  {
+   "fieldname": "corner_pegs",
+   "fieldtype": "Link",
+   "label": "Corner Pegs",
+   "options": "Door Species"
+  },
+  {
+   "fieldname": "panel_type",
+   "fieldtype": "Select",
+   "label": "Panel Type",
+   "options": "Raised\nRecessed\nOpen Panel\nSlab",
+   "default": "Raised"
+  },
+  {
+   "fieldname": "sb_dimensions",
+   "fieldtype": "Section Break",
+   "label": "Dimensions"
+  },
+  {
+   "fieldname": "width_imperial",
+   "fieldtype": "Data",
+   "label": "Width (in)",
+   "depends_on": "eval:doc.units==\"Imperial\"",
+   "mandatory_depends_on": "eval:doc.units==\"Imperial\"",
+   "description": "Accepts fractions, e.g. 24 3/16"
+  },
+  {
+   "fieldname": "height_imperial",
+   "fieldtype": "Data",
+   "label": "Height (in)",
+   "depends_on": "eval:doc.units==\"Imperial\"",
+   "mandatory_depends_on": "eval:doc.units==\"Imperial\"",
+   "description": "Accepts fractions, e.g. 24 3/16"
+  },
+  {
+   "fieldname": "width_metric",
+   "fieldtype": "Float",
+   "label": "Width (mm)",
+   "precision": "1",
+   "depends_on": "eval:doc.units==\"Metric\"",
+   "mandatory_depends_on": "eval:doc.units==\"Metric\""
+  },
+  {
+   "fieldname": "height_metric",
+   "fieldtype": "Float",
+   "label": "Height (mm)",
+   "precision": "1",
+   "depends_on": "eval:doc.units==\"Metric\"",
+   "mandatory_depends_on": "eval:doc.units==\"Metric\""
+  },
+  {
+   "fieldname": "cb_dim",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "inside_width_display",
+   "fieldtype": "Data",
+   "label": "Inside Width",
+   "read_only": 1
+  },
+  {
+   "fieldname": "inside_height_display",
+   "fieldtype": "Data",
+   "label": "Inside Height",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_frame",
+   "fieldtype": "Section Break",
+   "label": "Frame Widths"
+  },
+  {
+   "fieldname": "inverted_joints",
+   "fieldtype": "Check",
+   "label": "Inverted Joints?"
+  },
+  {
+   "fieldname": "custom_frame_widths",
+   "fieldtype": "Check",
+   "label": "Custom Frame Widths?",
+   "description": "Unchecked keeps all four members equal to the Frame Width above."
+  },
+  {
+   "fieldname": "frame_width_imperial",
+   "fieldtype": "Data",
+   "label": "Frame Width (in)",
+   "depends_on": "eval:doc.units==\"Imperial\"",
+   "description": "Accepts fractions, e.g. 24 3/16"
+  },
+  {
+   "fieldname": "frame_width_metric",
+   "fieldtype": "Float",
+   "label": "Frame Width (mm)",
+   "precision": "1",
+   "depends_on": "eval:doc.units==\"Metric\""
+  },
+  {
+   "fieldname": "sb_frame_sides",
+   "fieldtype": "Section Break",
+   "label": "",
+   "depends_on": "eval:doc.custom_frame_widths"
+  },
+  {
+   "fieldname": "frame_width_left_imperial",
+   "fieldtype": "Data",
+   "label": "Left Stile (in)",
+   "depends_on": "eval:doc.units==\"Imperial\" && doc.custom_frame_widths"
+  },
+  {
+   "fieldname": "frame_width_right_imperial",
+   "fieldtype": "Data",
+   "label": "Right Stile (in)",
+   "depends_on": "eval:doc.units==\"Imperial\" && doc.custom_frame_widths"
+  },
+  {
+   "fieldname": "frame_width_top_imperial",
+   "fieldtype": "Data",
+   "label": "Top Rail (in)",
+   "depends_on": "eval:doc.units==\"Imperial\" && doc.custom_frame_widths"
+  },
+  {
+   "fieldname": "frame_width_bottom_imperial",
+   "fieldtype": "Data",
+   "label": "Bottom Rail (in)",
+   "depends_on": "eval:doc.units==\"Imperial\" && doc.custom_frame_widths"
+  },
+  {
+   "fieldname": "cb_frame",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "frame_width_left_metric",
+   "fieldtype": "Float",
+   "label": "Left Stile (mm)",
+   "precision": "1",
+   "depends_on": "eval:doc.units==\"Metric\" && doc.custom_frame_widths"
+  },
+  {
+   "fieldname": "frame_width_right_metric",
+   "fieldtype": "Float",
+   "label": "Right Stile (mm)",
+   "precision": "1",
+   "depends_on": "eval:doc.units==\"Metric\" && doc.custom_frame_widths"
+  },
+  {
+   "fieldname": "frame_width_top_metric",
+   "fieldtype": "Float",
+   "label": "Top Rail (mm)",
+   "precision": "1",
+   "depends_on": "eval:doc.units==\"Metric\" && doc.custom_frame_widths"
+  },
+  {
+   "fieldname": "frame_width_bottom_metric",
+   "fieldtype": "Float",
+   "label": "Bottom Rail (mm)",
+   "precision": "1",
+   "depends_on": "eval:doc.units==\"Metric\" && doc.custom_frame_widths"
+  },
+  {
+   "fieldname": "sb_dividers",
+   "fieldtype": "Section Break",
+   "label": "Dividers"
+  },
+  {
+   "fieldname": "rail_dividers",
+   "fieldtype": "Int",
+   "label": "Rail Dividers",
+   "default": "0",
+   "description": "0-3 horizontal dividers."
+  },
+  {
+   "fieldname": "cb_div",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "stile_dividers",
+   "fieldtype": "Int",
+   "label": "Stile Dividers",
+   "default": "0",
+   "description": "0-3 vertical dividers."
+  },
+  {
+   "fieldname": "sb_rail_table",
+   "fieldtype": "Section Break",
+   "label": ""
+  },
+  {
+   "fieldname": "rails",
+   "fieldtype": "Table",
+   "label": "Rails",
+   "options": "Door Rail Divider"
+  },
+  {
+   "fieldname": "stiles",
+   "fieldtype": "Table",
+   "label": "Stiles",
+   "options": "Door Stile Divider"
+  },
+  {
+   "fieldname": "sb_hinges",
+   "fieldtype": "Section Break",
+   "label": "Hinges",
+   "depends_on": "eval:doc.door_type==\"Door\""
+  },
+  {
+   "fieldname": "hinge_qty",
+   "fieldtype": "Int",
+   "label": "Hinge Quantity",
+   "default": "2"
+  },
+  {
+   "fieldname": "hinge_side",
+   "fieldtype": "Select",
+   "label": "Hinge Side",
+   "options": "Left\nRight",
+   "default": "Left"
+  },
+  {
+   "fieldname": "cb_hinge",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "hinge_distance_from_edge",
+   "fieldtype": "Float",
+   "label": "Distance from Edge (in)",
+   "precision": "3",
+   "default": "5"
+  },
+  {
+   "fieldname": "sb_preview",
+   "fieldtype": "Section Break",
+   "label": "Preview"
+  },
+  {
+   "fieldname": "preview",
+   "fieldtype": "HTML",
+   "label": "Preview"
+  },
+  {
+   "fieldname": "cb_preview",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "messages",
+   "fieldtype": "Small Text",
+   "label": "Messages",
+   "read_only": 1
+  },
+  {
+   "fieldname": "horizontal_panels",
+   "fieldtype": "Int",
+   "label": "Horizontal Panels",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vertical_panels",
+   "fieldtype": "Int",
+   "label": "Vertical Panels",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_panels",
+   "fieldtype": "Int",
+   "label": "Total Panels",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_details",
+   "fieldtype": "Section Break",
+   "label": "Specification",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Table",
+   "label": "Order Details",
+   "options": "Door Configuration Detail",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-18 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "POC",
+ "name": "Door Configuration",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
